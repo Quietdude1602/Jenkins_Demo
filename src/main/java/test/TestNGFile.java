@@ -49,10 +49,9 @@ public class TestNGFile {
 
     @Test(priority = 5)
     public void deliberatelyFailTest() {
-        String baseUrl = "https://example.com";
-        driver.get(baseUrl + "/nonexistent-page");
+        driver.get("https://example.com/nonexistent-page");
         String pageTitle = driver.getTitle();
-        Assert.assertEquals(true, "Example Domain");
+        Assert.assertEquals(pageTitle, "Example Domain");
     }
 
     @AfterTest
