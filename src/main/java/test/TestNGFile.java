@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 
 import page.AmazonPage;
 
@@ -44,6 +45,14 @@ public class TestNGFile {
         pageFactory.click_pinCodeIcon();
         pageFactory.enter_PinCode();
         pageFactory.enter_SubmitButton();
+    }
+
+    @Test(priority = 5)
+    public void deliberatelyFailTest() {
+        String baseUrl = "https://example.com";
+        driver.get(baseUrl + "/nonexistent-page");
+        String pageTitle = driver.getTitle();
+        Assert.assertEquals(true, "Example Domain");
     }
 
     @AfterTest
