@@ -13,23 +13,24 @@ pipeline {
             }
         }
         stage('Test') {
-                    steps {
-                        bat "mvn -D clean test"
-                    }
-
-                    post {
-                        success {
-                           publishHTML([
-                               allowMissing: false,
-                               alwaysLinkToLastBuild: false,
-                               keepAll: false,
-                               reportDir: 'target/surefire-reports/',
-                               reportFiles: 'emailable-report.html',
-                               reportName: 'HTML Report',
-                               reportTitles: '',
-                               useWrapperFileDirectly: true])
-                        }
-                    }
+            steps {
+                bat 'mvn clean test'
+            }
+            post {
+                success {
+                    publishHTML([
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: 'target/surefire-reports/',
+                        reportFiles: 'emailable-report.html',
+                        reportName: 'HTML Report',
+                        reportTitles: '',
+                        useWrapperFileDirectly: true
+                    ])
+                }
+            }
+        }
         stage('Deployment') {
             steps {
                 echo 'Deployment is done'
