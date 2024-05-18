@@ -1,6 +1,6 @@
 # Selenium Java Test Automation with Jenkins CI/CD
 
-This repository contains a Selenium Java project for automated testing of web applications.
+This repository contains a Selenium Java project for automated testing of Amazon Web Application.
 
 ## Project Overview
 
