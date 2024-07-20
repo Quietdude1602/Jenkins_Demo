@@ -13,6 +13,7 @@ import page.AmazonPage;
 //This is a comment
 //Another comment
 //commit
+//commit2
 public class TestNGFile {
     private WebDriver driver;
     private AmazonPage pageFactory;
